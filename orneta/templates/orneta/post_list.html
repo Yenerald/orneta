@@ -165,8 +165,13 @@
 				</div>
 					<div id="article">
 						<article>
-							<p>To znajduje się strona główna.
-							<br>To się będzie zmieniało</p>
+						{% for post in posts %}
+							<div>
+								<p>Opublikowany: {{ post.published_date}}</p>
+								<h1><a href="">{{ post.title}}</a></h1>
+								<p>{{ post.text|linebreaksbr}}</p>
+							</div>
+						{% endfor %}
 						</article>
 					</div>
 			</div>
